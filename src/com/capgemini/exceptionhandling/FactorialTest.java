@@ -4,13 +4,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Test;
 
+import com.capgemini.exceptionhandling.exception.FactorialException;
 import com.capgemini.exceptionhandling.exception.InvalidInputException;
 import com.capgemini.exceptionhandling.mains.factorial;
 public class FactorialTest {
 
 
 	@Test
-	public void testValueWithValidInput() throws InvalidInputException 
+	public void testValueWithValidInput() throws InvalidInputException, FactorialException 
 	{
 			
 		factorial fact=new factorial();
@@ -18,7 +19,7 @@ public class FactorialTest {
 		
 	}
 	@Test(expected = InvalidInputException.class)
-	public void testValueWithInvalidInput() throws InvalidInputException 
+	public void testValueWithInvalidInput() throws InvalidInputException, FactorialException 
 	{
 		factorial fact=new factorial();
 		fact.getFactorial(1);
